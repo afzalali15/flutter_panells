@@ -43,11 +43,12 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        height: _isVisible ? 100 : 0,
+        height: _isVisible ? 80 : 0,
         child: Wrap(
           children: [
             BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
+              elevation: 0,
               fixedColor: Colors.black,
               unselectedItemColor: Colors.grey,
               iconSize: 32,
