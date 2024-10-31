@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_panells/widgets/collection_tile.dart';
 import 'package:flutter_panells/widgets/image_tile.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -159,12 +160,17 @@ class _ExplorePageState extends State<ExplorePage> {
               crossAxisSpacing: 12,
               padding: const EdgeInsets.all(12),
               itemBuilder: (context, index) {
-                return ImageTile(
-                  index: index,
-                  imageSource:
-                      'https://picsum.photos/500/500?random=img_$index',
-                  extent: (index % 2) == 0 ? 300 : 150,
-                );
+                return (index % 2) == 0
+                    ? ImageTile(
+                        index: index,
+                        imageSource:
+                            'https://picsum.photos/500/500?random=img_$index',
+                        extent: 300,
+                      )
+                    : CollectionTile(
+                        index: index,
+                        extent: 150,
+                      );
               },
             ),
           ),
